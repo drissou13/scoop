@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>le monde est scoop</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu des Scoops</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Contexte spatial (par exemple un fond d'étoiles et des animations) -->
+    <div class="background-space"></div>
+
+    <!-- Interface du jeu -->
+    <div id="game">
+        <h1>Jeu des Scoops</h1>
+        <p id="counter">Question 1 / 10</p>
+        <p id="scoop"></p>
+
+        <div class="buttons-container">
+            <button class="answer-btn" onclick="checkAnswer(true)">Vrai</button>
+            <button class="answer-btn" onclick="checkAnswer(false)">Faux</button>
+        </div>
+    </div>
+
+    <!-- Interface Finale -->
+    <div id="finale" style="display: none;">
+        <h1>La Grande Finale !</h1>
+        <p id="final-score"></p>
+        <div id="finale-options" class="buttons-container"></div>
+    </div>
+
+    <!-- Footer / Instructions -->
+    <footer>
+        <p>Créé avec ❤️ pour vous !</p>
+    </footer>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

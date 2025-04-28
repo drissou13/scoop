@@ -1,0 +1,190 @@
+/* --- Fond spatial --- */
+body {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+  color: white;
+}
+
+/* --- Cartes de jeu (game et finale) --- */
+#game, #finale {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.1);
+  width: 90%;
+  max-width: 400px;
+  margin: 50px auto;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Boutons --- */
+button {
+  margin: 10px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 2px solid #00ffff;
+  background: linear-gradient(145deg, #1f4068, #1b2735);
+  color: #00ffff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #00ffff;
+  color: #1b2735;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+/* --- Titres --- */
+h1, h2 {
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* --- Scoops et options --- */
+#scoop, #finale-options {
+  margin: 20px 0;
+}
+
+/* --- Animations bonnes/mauvaises réponses --- */
+.correct {
+  animation: correctAnim 1s ease;
+}
+
+.incorrect {
+  animation: incorrectAnim 1s ease;
+}
+
+@keyframes correctAnim {
+  0% { background-color: rgba(0,255,0,0.3); }
+  50% { background-color: rgba(0,255,0,0.7); }
+  100% { background-color: rgba(0,255,0,0.3); }
+}
+
+@keyframes incorrectAnim {
+  0% { background-color: rgba(255,0,0,0.3); }
+  50% { background-color: rgba(255,0,0,0.7); }
+  100% { background-color: rgba(255,0,0,0.3); }
+}
+
+/* --- Fond étoiles animées --- */
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: transparent url('') repeat top center;
+  animation: moveStars 100s linear infinite;
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-1000px); }
+}
+
+/* --- Vaisseaux spatiaux --- */
+.spaceship {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  background: url('https://static.vecteezy.com/system/resources/previews/050/760/298/non_2x/futuristic-white-spaceship-with-red-engines-and-black-nose-png.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- Chaque vaisseau a un chemin différent --- */
+.spaceship1 {
+  top: 20%;
+  left: -50px;
+  animation: fly1 60s linear infinite;
+}
+
+.spaceship2 {
+  top: 50%;
+  left: 110%;
+  animation: fly2 80s linear infinite;
+}
+
+.spaceship3 {
+  top: 70%;
+  left: -60px;
+  animation: fly1 90s linear infinite;
+}
+
+/* --- Animations des vaisseaux --- */
+@keyframes fly1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(150vw); }
+}
+
+@keyframes fly2 {
+  0% { transform: translateX(0) scaleX(-1); }
+  100% { transform: translateX(-150vw) scaleX(-1); }
+}
+body {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: url('https://www.papierpeintpanoramique.fr/media/catalog/product/cache/871f459736130e239a3f5e6472128962/w/0/w09398_-_small.jpg') no-repeat center top;
+  background-size: cover; /* Assure que l'image couvre tout l'écran */
+  color: white;
+  overflow: hidden;
+  /* --- Conteneur pour les étoiles --- */
+#stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: transparent;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* --- Style de chaque étoile --- */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle 2s infinite;
+}
+
+/* --- Animation de scintillement --- */
+@keyframes twinkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+.answer-btn {
+  background-color: #00c3ff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.answer-btn:hover {
+  background-color: #008cba;
+}
